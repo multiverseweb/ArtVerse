@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgba(0, 0, 0, 0.915);
+    color: white;
+    overflow-y: hidden;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+button{
+    cursor: pointer;
+}
+.heading{
+    position: absolute;
+    font-size: 30px;
+    font-weight: 800;
+    right: 30px;
+    top:30px;
+    text-align: right;
+}
+.calanderBtn{
+    background-color: #00000000;
+    border: none;
+}
+
+.calanderBtn img{
+    filter: invert(1);
+    height: 40px;
+    position: fixed;
+    z-index: 20;
+    top:20px;
+    left: 20px;
+    transition-duration: 0.3s;
+    border-radius: 10px;
+    padding: 5px;
+}
+.calanderBtn img:hover{
+    background-color: #9c9c9c4a;
+}
+.calander{
+    z-index: 10;
+    padding-top: 100px;
+    position: absolute;
+    top:0;
+    display: flex;
+    flex-direction: column;
+    background-color: #00000044;
+    backdrop-filter: blur(7px);
+    box-shadow: 5px 0 10px black;
+    height: 100vh;
+    width: 10vw;
+    transition-duration: 0.4s;
+}
+.calander a{
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    transition-duration: 0.3s;
+}
+
+.calander a:hover{
+    background-color: rgba(194, 194, 194, 0.16);
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    margin-top: calc(50vh - 250px);
+    overflow-x: scroll;
+}
+.art{
+    margin: 80px;
+    margin-top: 0;
+    height: 500px;
+    box-shadow: 0 0 20px black;
+}
+.frame{
+    display: flex;
+    flex-direction: column;
+}
+.info{
+    display: flex;
+    justify-content: space-around;
+    margin-top: -70px;
+}
+.credits{
+    bottom: 0;
+    position: absolute;
+    margin-left: 50%;
+    transform: translate(-50%);
+    margin-bottom: 5px;
+    color: #ffffff83;
+}
+
+@media screen and (max-width: 700px){
+    body{
+        overflow-y: scroll;
+    }
+    .container{
+        flex-direction: column;
+        margin-left: calc(10vw - 30px);
+    }
+    .art{
+        margin:30px;
+        margin-top: 70px;
+        width: 80vw;
+        height: auto;
+    }
+    .calander{
+        width: 30vw;
+        position: fixed;
+        overflow-x: scroll;
+    }
+    .info{
+        margin-top: -20px;
+    }
+    .credits{
+        margin-top: 50px;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 0;
+    }
+    .calanderBtn img{
+        background-color: #d4d4d48a;
+    }
+}
