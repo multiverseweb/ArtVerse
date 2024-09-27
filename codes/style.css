@@ -11,6 +11,10 @@ body{
 ::-webkit-scrollbar{
     display: none;
 }
+a{
+    text-decoration: none;
+    color: #ffffffd7;
+}
 button{
     cursor: pointer;
 }
@@ -56,8 +60,6 @@ button{
     transition-duration: 0.4s;
 }
 .calander a{
-    text-decoration: none;
-    color: white;
     padding: 20px;
     text-align: center;
     transition-duration: 0.3s;
