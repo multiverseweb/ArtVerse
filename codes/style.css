@@ -1,55 +1,61 @@
-*{
+/* General styles */
+* {
     margin: 0;
     padding: 0;
 }
-body{
+html {
+    scroll-behavior: smooth;
+}
+body {
     font-family: 'Courier New', Courier, monospace;
     background-color: rgba(0, 0, 0, 0.915);
     color: white;
     overflow-y: hidden;
 }
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     display: none;
 }
-a{
+a {
     text-decoration: none;
     color: #ffffffd7;
 }
-button{
+button {
     cursor: pointer;
 }
-.heading{
+.heading {
     position: absolute;
     font-size: 30px;
     font-weight: 800;
     right: 30px;
-    top:30px;
+    top: 30px;
     text-align: right;
 }
-.calanderBtn{
+.calanderBtn {
     background-color: #00000000;
     border: none;
 }
 
-.calanderBtn img{
+.calanderBtn img {
     filter: invert(1);
     height: 40px;
     position: fixed;
     z-index: 20;
-    top:20px;
+    top: 20px;
     left: 20px;
     transition-duration: 0.3s;
     border-radius: 10px;
     padding: 5px;
 }
-.calanderBtn img:hover{
+
+.calanderBtn img:hover {
     background-color: #9c9c9c4a;
 }
-.calander{
+
+.calander {
     z-index: 10;
     padding-top: 100px;
     position: absolute;
-    top:0;
+    top: 0;
     display: flex;
     flex-direction: column;
     background-color: #00000044;
@@ -59,38 +65,46 @@ button{
     width: 10vw;
     transition-duration: 0.4s;
 }
-.calander a{
+
+.calander a {
     padding: 20px;
     text-align: center;
     transition-duration: 0.3s;
 }
 
-.calander a:hover{
+.calander a:hover {
     background-color: rgba(194, 194, 194, 0.16);
 }
 
-.container{
+
+.container {
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /* Row layout for desktop */
     margin-top: calc(50vh - 250px);
-    overflow-x: scroll;
+    overflow-x: scroll; /* Horizontal scroll */
+    scroll-behavior: smooth; /* Smooth scroll for horizontal navigation */
 }
-.art{
+
+.art {
     margin: 80px;
     margin-top: 0;
     height: 500px;
     box-shadow: 0 0 20px black;
+    cursor: pointer; /* Make the images clickable */
 }
-.frame{
+
+.frame {
     display: flex;
     flex-direction: column;
 }
-.info{
+
+.info {
     display: flex;
     justify-content: space-around;
     margin-top: -70px;
 }
-.credits{
+
+.credits {
     bottom: 0;
     position: absolute;
     margin-left: 50%;
@@ -99,36 +113,92 @@ button{
     color: #ffffff83;
 }
 
-@media screen and (max-width: 700px){
-    body{
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 30;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+#caption {
+    text-align: center;
+    color: #ccc;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+    body {
         overflow-y: scroll;
     }
-    .container{
-        flex-direction: column;
+
+    .container {
+        flex-direction: column; /* Column layout for mobile */
         margin-left: calc(10vw - 30px);
+        overflow-y: scroll; /* Enable vertical scroll */
+        overflow-x: hidden; /* Disable horizontal scroll */
     }
-    .art{
-        margin:30px;
+
+    .art {
+        margin: 30px;
         margin-top: 70px;
         width: 80vw;
         height: auto;
     }
-    .calander{
+
+    .calander {
         width: 30vw;
         position: fixed;
         overflow-x: scroll;
     }
-    .info{
+
+    .info {
         margin-top: -20px;
         font-size: 10px;
     }
-    .credits{
+
+    .credits {
         margin-top: 50px;
         margin-bottom: 20px;
         position: relative;
         z-index: 0;
     }
-    .calanderBtn img{
+
+    .calanderBtn img {
         background-color: #d4d4d48a;
+    }
+    .modal-content{
+        margin-top: 20vh;
     }
 }

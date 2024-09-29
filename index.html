@@ -23,14 +23,14 @@
         <a href="#2017">2017</a>
     </nav>
     <div class="container">
-        <div class="frame">
+        <div class="frame" id="2024">
             <img src="resources/ship.jpeg" alt="" class="art">
             <div class="info">
                 <p class="name">Where Stars Kiss the Ocean</p>
                 <p class="date">15-05-2024</p>
             </div>
         </div>
-        <div class="frame">
+        <div class="frame" id="2022">
             <img src="resources/bcpcoe.jpg" alt="" class="art">
             <div class="info">
                 <p class="name">Bharati Vidyapeeth COE, Pune</p>
@@ -88,6 +88,15 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal for displaying full-sized artwork -->
+    <div id="artModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption"></div>
+    </div>
+
+    
     <div class="credits">&copy; <a href="https://tejas-links.netlify.app">Tejas Gupta</a> 2024</div>
     <script src="codes/script.js"></script>
 </body>
