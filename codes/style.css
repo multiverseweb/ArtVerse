@@ -15,12 +15,41 @@ body {
 ::-webkit-scrollbar {
     display: none;
 }
+
 a {
     text-decoration: none;
     color: #ffffffd7;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 button {
     cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+img{
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.top{
+    margin-top: 100px;
+}
+.intro{
+    margin: 20px;
+    text-align: right;
+}
+.write{
+    display: block;
+    width: max-content;
+    padding: 5px 10px 5px 10px;
+    margin-left: 100%;
+    transform: translate(calc(-100% - 30px));
+    border-radius: 20px;
+    color: white;
+    background-color: #00000000;
+    border: 1px solid white;
+    transition-duration: 0.3s;
+}
+.write:hover{
+    background-color: white;
+    color: #000;
 }
 .heading {
     position: absolute;
@@ -45,6 +74,12 @@ button {
     transition-duration: 0.3s;
     border-radius: 10px;
     padding: 5px;
+    backdrop-filter: blur(2px) invert(1);
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+}
+
+#calanderImg{
+    transition-duration: 0.3s;
 }
 
 .calanderBtn img:hover {
@@ -80,7 +115,7 @@ button {
 .container {
     display: flex;
     flex-direction: row; /* Row layout for desktop */
-    margin-top: calc(50vh - 250px);
+    margin-top: 20px;
     overflow-x: scroll; /* Horizontal scroll */
     scroll-behavior: smooth; /* Smooth scroll for horizontal navigation */
 }
@@ -158,6 +193,97 @@ button {
     cursor: pointer;
 }
 
+form{
+    color: #e2e2e2;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    margin-top: 50px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #5c5c5c53;
+    text-align: center;
+}
+input{
+    border-radius: 10px;
+    border: none;
+    color: rgb(255, 255, 255);
+    margin-top: 10px;
+    background-color: #121212;
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+}
+#name{
+    height: 20px;
+}
+#email{
+    height: 20px;
+}
+#message{
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    background-color: #121212;
+}
+#submit{
+    margin-left: calc(100% - 70px);
+    width: 70px;
+    height: 40px;
+    transition-duration: 0.3s;
+}
+#submit:hover{
+    filter: invert(1);
+}
+
+.back{
+    background-color: #7d7d7d44;
+    padding: 10px;
+    margin: 20px;
+    position: absolute;
+    bottom: 0;
+    box-shadow: 0 0 10px black;
+    transition-duration: 0.3s;
+    border-radius: 10px;
+}
+.back:hover{
+    color: #000;
+    background-color: rgb(220, 220, 220);
+}
+.scrollable-wrapper{
+    text-align: center;
+    background-color: #252525dc;
+    padding: 0;
+    border-radius: 10px;
+    height: 200px;
+    overflow: scroll;
+    margin: 20px;
+}
+.scrollable-wrapper p{
+    padding: 10px;
+}
+.reviews{
+    border-radius: 10px;
+    overflow-y: hidden;
+    background-color: #333333;
+    width: calc(100vw - 40px);
+}
+tr{
+    height: 30px;
+    padding: 5px;
+}
+td{
+    padding: 10px;
+}
+th{
+    height: 30px;
+    padding: 5px;
+}
+tr:nth-child(odd) {
+    background-color: #252525dc;
+}
 @media screen and (max-width: 700px) {
     body {
         overflow-y: scroll;

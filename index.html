@@ -8,9 +8,9 @@
     <title>Tejas | ArtVerse</title>
 </head>
 
-<body>
+<body id="body">
     <p class="heading">Tejas'<br>ArtWorks</p>
-    <button class="calanderBtn" onclick=toggleCalendar()><img src="resources/calendar.png" alt=""
+    <button class="calanderBtn" onclick=toggleCalendar()><img src="resources/close.png" alt=""
             id="calanderImg"></button>
     <nav class="calander" id="calander">
         <a href="#2024">2024</a>
@@ -22,7 +22,12 @@
         <a href="#2018">2018</a>
         <a href="#2017">2017</a>
     </nav>
-    <div class="container">
+    <div class="top">
+        <p class="intro">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus eum repellat esse amet
+            commodi optio soluta doloribus laboriosam nostrum cupiditate.</p>
+        <a class="write" href="feedback.html">Read/Write Feedback</a>
+    </div>
+    <div class="container" id="container">
         <div class="frame" id="2024">
             <img src="resources/ship.jpeg" alt="" class="art">
             <div class="info">
@@ -96,8 +101,8 @@
         <div id="caption"></div>
     </div>
 
-    
-    <div class="credits">&copy; <a href="https://tejas-links.netlify.app">Tejas Gupta</a> 2024</div>
+
+    <div class="credits">&copy; 2024 <a href="https://tejas-links.netlify.app">Tejas Gupta</a></div>
     <script src="codes/script.js"></script>
 </body>
 

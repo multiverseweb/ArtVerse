@@ -1,19 +1,25 @@
 var calander = document.getElementById("calander");
+var body = document.getElementById("body");
 var container = document.querySelector('.container'); // Select container for scrolling
-
 // Toggle calendar visibility
 function toggleCalendar() {
     if (window.innerWidth < 700) {
         if (calander.style.marginLeft === "-50vw") {
             calander.style.marginLeft = "0";
+            body.style.overflow = "hidden";
+            document.getElementById("calanderImg").src = "resources/close.png";
         } else {
             calander.style.marginLeft = "-50vw";
+            body.style.overflow = "scroll";
+            document.getElementById("calanderImg").src = "resources/calendar.png";
         }
     } else {
         if (calander.style.marginLeft === "-10vw") {
             calander.style.marginLeft = "0";
+            document.getElementById("calanderImg").src = "resources/close.png";
         } else {
             calander.style.marginLeft = "-10vw";
+            document.getElementById("calanderImg").src = "resources/calendar.png";
         }
     }
 }
