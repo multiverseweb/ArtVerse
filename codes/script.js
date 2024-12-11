@@ -7,19 +7,19 @@ function toggleCalendar() {
         if (calander.style.marginLeft === "-50vw") {
             calander.style.marginLeft = "0";
             body.style.overflow = "hidden";
-            document.getElementById("calanderImg").src = "resources/close.png";
+            document.getElementById("calanderImg").src = "artworks/close.png";
         } else {
             calander.style.marginLeft = "-50vw";
             body.style.overflow = "scroll";
-            document.getElementById("calanderImg").src = "resources/calendar.png";
+            document.getElementById("calanderImg").src = "artworks/calander.png";
         }
     } else {
         if (calander.style.marginLeft === "-10vw") {
             calander.style.marginLeft = "0";
-            document.getElementById("calanderImg").src = "resources/close.png";
+            document.getElementById("calanderImg").src = "artworks/close.png";
         } else {
             calander.style.marginLeft = "-10vw";
-            document.getElementById("calanderImg").src = "resources/calendar.png";
+            document.getElementById("calanderImg").src = "artworks/calander.png";
         }
     }
 }

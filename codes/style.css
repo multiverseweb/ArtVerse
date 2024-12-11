@@ -166,8 +166,8 @@ img{
 .modal-content {
     margin: auto;
     display: block;
-    width: 80%;
-    max-width: 700px;
+    max-height: 80vh;
+    max-width: 90vw;
 }
 
 #caption {
