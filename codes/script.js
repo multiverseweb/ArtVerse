@@ -95,3 +95,14 @@ function display() {
 }
 
 display();
+
+function checkFeedbackLength(input) {
+    if(input.value.length < 10) {
+        document.getElementById('feedbackError').style.opacity = '100%';
+        return false;
+    } else {
+        document.getElementById('feedbackError').style.opacity = '0%';
+        return true;
+    }
+  }
+  windowFunctions.push(checkFeedbackLength);

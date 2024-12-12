@@ -226,7 +226,35 @@ input{
     margin-top: 10px;
     background-color: #121212;
     resize: none;
+    margin-bottom: 10px;
 }
+
+
+.star-rating {
+    display: flex;
+    justify-content: center;
+    direction: rtl;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    font-size: 2em;
+    color: grey;
+    cursor: pointer;
+}
+
+.star-rating input:checked~label {
+    color: gold;
+}
+
+.star-rating label:hover,
+.star-rating label:hover~label {
+    color: gold;
+}
+
 #submit{
     margin-left: calc(100% - 70px);
     width: 70px;
