@@ -1,4 +1,3 @@
-/* General styles */
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +7,7 @@ html {
 }
 body {
     font-family: 'Courier New', Courier, monospace;
-    background-color: rgba(0, 0, 0, 0.915);
+    background-color: rgb(20, 20, 20);
     color: white;
     overflow-y: hidden;
 }
@@ -24,15 +23,14 @@ a {
 button {
     cursor: pointer;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-family: 'Courier New', Courier, monospace;
 }
 img{
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-.top{
-    margin-top: 100px;
-}
 .intro{
     margin: 20px;
+    margin-top: 10px;
     text-align: right;
     word-wrap: break-word;
 }
@@ -41,7 +39,7 @@ img{
     width: max-content;
     padding: 5px 10px 5px 10px;
     margin-left: 100%;
-    transform: translate(calc(-100% - 30px));
+    transform: translate(calc(-100% - 20px));
     border-radius: 20px;
     color: white;
     background-color: #00000000;
@@ -53,11 +51,9 @@ img{
     color: #000;
 }
 .heading {
-    position: absolute;
     font-size: 30px;
     font-weight: 800;
-    right: 30px;
-    top: 30px;
+    margin-right: 20px;
     text-align: right;
 }
 .calanderBtn {
@@ -90,7 +86,7 @@ img{
 .calander {
     z-index: 10;
     padding-top: 100px;
-    position: absolute;
+    position: fixed;
     top: 0;
     display: flex;
     flex-direction: column;
@@ -141,12 +137,13 @@ img{
 }
 
 .credits {
-    bottom: 0;
-    position: absolute;
-    margin-left: 50%;
-    transform: translate(-50%);
-    margin-bottom: 5px;
+    bottom: 0px;
+    position: fixed;
     color: #ffffff83;
+    padding: 10px;
+    text-align: center;
+    width: calc(100vw - 20px);
+    background-image: linear-gradient(to bottom, transparent,rgb(20, 20, 20),rgb(20, 20, 20),rgb(20, 20, 20));
 }
 
 /* Modal styles */
@@ -228,6 +225,7 @@ input{
     border: none;
     margin-top: 10px;
     background-color: #121212;
+    resize: none;
 }
 #submit{
     margin-left: calc(100% - 70px);
@@ -243,11 +241,17 @@ input{
     background-color: #7d7d7d44;
     padding: 10px;
     margin: 20px;
-    position: absolute;
+    position: fixed;
     bottom: 0;
+    left:0;
     box-shadow: 0 0 10px black;
+    width: max-content;
+    backdrop-filter: blur(5px);
     transition-duration: 0.3s;
     border-radius: 10px;
+    z-index: 10;
+    border: none;
+    color: #ccc;
 }
 .back:hover{
     color: #000;
@@ -258,9 +262,9 @@ input{
     background-color: #252525dc;
     padding: 0;
     border-radius: 10px;
-    height: 200px;
     overflow: scroll;
     margin: 20px;
+    height: 35vh;
 }
 .scrollable-wrapper p{
     padding: 10px;
@@ -285,9 +289,23 @@ th{
 tr:nth-child(odd) {
     background-color: #252525dc;
 }
+
+.BigContainer{
+    display: flex;
+    flex-direction: column;
+    transition-duration: 0.3s;
+}
+#feedbackSection{
+    height: 100vh;
+}
 @media screen and (max-width: 700px) {
     body {
+        overflow-x: hidden;
         overflow-y: scroll;
+    }
+    .BigContainer{
+        flex-direction: row;
+        overflow-x: hidden;
     }
 
     .container {

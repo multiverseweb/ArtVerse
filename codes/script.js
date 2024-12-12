@@ -3,24 +3,14 @@ var body = document.getElementById("body");
 var container = document.querySelector('.container'); // Select container for scrolling
 // Toggle calendar visibility
 function toggleCalendar() {
-    if (window.innerWidth < 700) {
-        if (calander.style.marginLeft === "-50vw") {
-            calander.style.marginLeft = "0";
-            body.style.overflow = "hidden";
-            document.getElementById("calanderImg").src = "artworks/close.png";
-        } else {
-            calander.style.marginLeft = "-50vw";
-            body.style.overflow = "scroll";
-            document.getElementById("calanderImg").src = "artworks/calander.png";
-        }
+    document.getElementById("BigContainer").scrollLeft = 0;
+    document.getElementById("BigContainer").scrollTop = 0;
+    if (calander.style.marginLeft === "-50vw") {
+        calander.style.marginLeft = "0";
+        document.getElementById("calanderImg").src = "artworks/close.png";
     } else {
-        if (calander.style.marginLeft === "-10vw") {
-            calander.style.marginLeft = "0";
-            document.getElementById("calanderImg").src = "artworks/close.png";
-        } else {
-            calander.style.marginLeft = "-10vw";
-            document.getElementById("calanderImg").src = "artworks/calander.png";
-        }
+        calander.style.marginLeft = "-50vw";
+        document.getElementById("calanderImg").src = "artworks/calander.png";
     }
 }
 
@@ -29,7 +19,7 @@ function scrollToYear(yearId) {
     var yearElement = document.getElementById(yearId);
 
     if (yearElement) {
-        if (window.innerWidth < 700) { 
+        if (window.innerWidth < 700) {
             // For mobile (vertical layout)
             yearElement.scrollIntoView({
                 behavior: 'smooth',
@@ -47,7 +37,7 @@ function scrollToYear(yearId) {
 
 // Attach click events to all year links in the calendar
 document.querySelectorAll('.calander a').forEach(link => {
-    link.addEventListener('click', function(event) {
+    link.addEventListener('click', function (event) {
         event.preventDefault();  // Prevent default anchor behavior
         var yearId = this.getAttribute('href').substring(1);  // Get the year ID (e.g., "2024")
         scrollToYear(yearId);  // Scroll to the year section
@@ -68,12 +58,12 @@ function openArtworkModal(imageSrc, caption) {
 }
 
 // Close modal when 'X' is clicked
-closeModal.onclick = function() {
+closeModal.onclick = function () {
     modal.style.display = "none";
 }
 
 // Close the modal when clicking anywhere outside the image
-window.onclick = function(event) {
+window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
@@ -81,9 +71,27 @@ window.onclick = function(event) {
 
 // Attach click events to all artwork images for modal
 document.querySelectorAll('.art').forEach(image => {
-    image.addEventListener('click', function() {
+    image.addEventListener('click', function () {
         var imgSrc = this.src;  // Get image source
         var caption = this.nextElementSibling.querySelector('.name').innerText;  // Get image caption
         openArtworkModal(imgSrc, caption);
     });
 });
+
+function scrollFunction() {
+    const element = document.getElementById("feedbackSection");
+    element.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById("calanderImg").style.opacity = 0;
+    document.getElementById("back").style.opacity = 1;
+    calander.style.marginLeft = "-50vw";
+    document.getElementById("calanderImg").src = "artworks/calander.png";
+}
+
+function display() {
+    const element = document.getElementById("display");
+    element.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById("calanderImg").style.opacity = 1;
+    document.getElementById("back").style.opacity = 0;
+}
+
+display();
