@@ -122,7 +122,9 @@ img{
     margin-top: 0;
     height: 500px;
     box-shadow: 0 0 20px black;
-    cursor: pointer; /* Make the images clickable */
+    cursor: pointer;
+    border-radius: 5px;
+    height: 60vh;
 }
 
 .frame {
@@ -324,9 +326,16 @@ tr:nth-child(odd) {
     transition-duration: 0.3s;
 }
 #feedbackSection{
+    margin-top: 100vh;
     height: 100vh;
+    margin-left: 0;
 }
 @media screen and (max-width: 700px) {
+    #feedbackSection{
+        margin-top: 0vh;
+        height: 100vh;
+        margin-left: 10vw;
+    }
     body {
         overflow-x: hidden;
         overflow-y: scroll;
