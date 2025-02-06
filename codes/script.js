@@ -83,6 +83,7 @@ function scrollFunction() {
     element.scrollIntoView({ behavior: 'smooth' });
     document.getElementById("calanderImg").style.opacity = 0;
     document.getElementById("back").style.opacity = 1;
+    body.style.overflowY = "hidden";
     calander.style.marginLeft = "-50vw";
     document.getElementById("calanderImg").src = "artworks/calander.png";
 }
@@ -91,6 +92,9 @@ function display() {
     const element = document.getElementById("display");
     element.scrollIntoView({ behavior: 'smooth' });
     document.getElementById("calanderImg").style.opacity = 1;
+    if (window.matchMedia("(max-width: 700px)").matches) {
+        body.style.overflowY = "scroll";
+    }
     document.getElementById("back").style.opacity = 0;
 }
 
@@ -105,4 +109,3 @@ function checkFeedbackLength(input) {
         return true;
     }
   }
-  windowFunctions.push(checkFeedbackLength);

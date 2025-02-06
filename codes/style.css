@@ -118,7 +118,8 @@ img{
 }
 
 .art {
-    margin: 80px;
+    margin: 40px;
+    margin-bottom: 80px;
     margin-top: 0;
     height: 500px;
     box-shadow: 0 0 20px black;
@@ -198,18 +199,16 @@ form{
     display: flex;
     flex-direction: column;
     margin: 20px;
-    margin-top: 50px;
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
-    background-color: #5c5c5c53;
     text-align: center;
 }
 input{
-    border-radius: 10px;
     border: none;
     color: rgb(255, 255, 255);
-    margin-top: 10px;
-    background-color: #121212;
+    margin-top: 5px;
+    background-color: #32323200;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.674);
     padding: 10px;
     font-family: 'Courier New', Courier, monospace;
 }
@@ -220,15 +219,16 @@ input{
     height: 20px;
 }
 #message{
-    color: rgb(255, 255, 255);
-    padding: 10px;
     font-family: 'Courier New', Courier, monospace;
-    border-radius: 10px;
-    border: none;
-    margin-top: 10px;
-    background-color: #121212;
+    margin-top: 5px;
     resize: none;
     margin-bottom: 10px;
+    border: none;
+    color: rgb(255, 255, 255);
+    margin-top: 10px;
+    background-color: #32323200;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.674);
+    padding: 10px;
 }
 
 
@@ -262,9 +262,14 @@ input{
     width: 70px;
     height: 40px;
     transition-duration: 0.3s;
+    border-bottom: none;
+    background-color: #5f5f5f4a;
+    border-radius: 10px;
+    cursor: pointer;
 }
 #submit:hover{
-    filter: invert(1);
+    color: black;
+    background-color: white;
 }
 
 .back{
@@ -294,7 +299,7 @@ input{
     border-radius: 10px;
     overflow: scroll;
     margin: 20px;
-    height: 35vh;
+    height: 30vh;
 }
 .scrollable-wrapper p{
     padding: 10px;
@@ -354,7 +359,7 @@ tr:nth-child(odd) {
 
     .art {
         margin: 30px;
-        margin-top: 70px;
+        margin-top: 40px;
         width: 80vw;
         height: auto;
     }
