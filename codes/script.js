@@ -8,8 +8,10 @@ function toggleCalendar() {
     if (calander.style.marginLeft === "-50vw") {
         calander.style.marginLeft = "0";
         document.getElementById("calanderImg").src = "artworks/close.png";
+        document.getElementById("type").style.right = "-30px";
     } else {
         calander.style.marginLeft = "-50vw";
+        document.getElementById("type").style.right = "-130px";
         document.getElementById("calanderImg").src = "artworks/calander.png";
     }
 }
@@ -109,3 +111,44 @@ function checkFeedbackLength(input) {
         return true;
     }
   }
+
+
+  
+document.querySelectorAll('.type a').forEach(link => {
+    link.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent immediate navigation
+
+        // Fade out the current page's <section>
+        const currentSection = document.querySelector('section');
+        currentSection.classList.add('hidden');
+
+        // Store the href in sessionStorage to navigate after fade-out
+        sessionStorage.setItem('nextPage', this.href);
+
+        // Wait for the fade-out to complete
+        setTimeout(() => {
+            // Navigate to the new page
+            window.location.href = this.href;
+        }, 300); // Matches the transition duration
+    });
+});
+
+// Fade in the <section> of the new page on load
+window.onload = function () {
+    const newSection = document.querySelector('section');
+
+    // Check if coming from another page
+    if (sessionStorage.getItem('nextPage')) {
+        newSection.classList.add('hidden'); // Start hidden
+        setTimeout(() => {
+            newSection.classList.remove('hidden'); // Fade in
+        }, 0); // Slight delay to ensure transition
+    }
+};
+
+function nft_review(){
+    window.location.href = "index.html";
+    setTimeout(() => {
+        scrollFunction();
+    }, 1000); 
+}

@@ -28,6 +28,35 @@ button {
 img{
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+
+section.hidden {
+    opacity: 0;
+    /* Hidden state */
+}
+
+.type{
+    background-color: #00000044;
+    backdrop-filter: blur(7px);
+    box-shadow: -5px 0 10px black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right:-30px;
+    top:40vh;
+    transition-duration: 0.3s;
+    overflow: hidden;
+}
+.type a{
+    padding: 20px;
+    padding-right: 50px;
+    border-radius: 10px;
+    text-align: center;
+    transition-duration: 0.3s;
+}
+#current{
+    background-color: rgba(40, 40, 40, 0.318);
+}
 .intro{
     margin: 20px;
     margin-top: 10px;
