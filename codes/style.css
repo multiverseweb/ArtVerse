@@ -14,9 +14,7 @@ body {
 ::-webkit-scrollbar {
     display: none;
 }
-img {
-    pointer-events: none;
-}
+
 a {
     text-decoration: none;
     color: #ffffffd7;
