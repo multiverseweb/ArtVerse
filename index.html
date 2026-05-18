@@ -270,9 +270,9 @@
         <div id="feedbackSection">
             <form name="ArtVerse Reviews" method="POST" data-netlify="true">
                 <p style="color:white">Let Me Know Your Thoughts!</p>
-                <input type="text" id="name" name="Name" placeholder="Your Name">
-                <input type="email" id="email" name="Email" placeholder="Your Email ID">
-                <textarea name="Message" id="message" placeholder="* Your Message" rows="1" required
+                <input type="text" id="name" name="Name" placeholder="Name">
+                <input type="email" id="email" name="Email" placeholder="Email ID">
+                <textarea name="Message" id="message" placeholder="* Comment" rows="1" required
                     oninput="checkFeedbackLength(this)"></textarea>
                 <p id="feedbackError"
                     style="color:#fd4346; opacity: 0%; font-weight:500; font-size:15px; white-space: normal; transition: opacity 0.4s ease ">
@@ -289,7 +289,7 @@
                     <input type="radio" id="star1" name="rating" value="1" />
                     <label for="star1" title="1 stars">&#9733;</label>
                 </div>
-                <input type="submit" value="Send" id="submit">
+                <input type="submit" value="Post" id="submit">
             </form>
             <div class="scrollable-wrapper">
                 <p>Read what people said!</p>
@@ -303,7 +303,7 @@
                     </thead>
                     <tbody id="reviewsBody">
                         <tr>
-                            <td colspan="3" style="text-align:center; opacity:0.5;">Loading reviews...</td>
+                            <td colspan="3" style="text-align:center; opacity:0.5;">Loading comments...</td>
                         </tr>
                     </tbody>
                 </table>
