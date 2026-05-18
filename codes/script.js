@@ -170,7 +170,7 @@ function loadReviews() {
     })
     .then((reviews) => {
       if (!reviews || reviews.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="3" style="text-align:center; opacity:0.5;">No reviews yet. Be the first!</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="3" style="text-align:center; opacity:0.5;">No comments yet. Be the first!</td></tr>`;
         return;
       }
 
