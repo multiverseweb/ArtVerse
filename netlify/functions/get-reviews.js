@@ -48,11 +48,10 @@ exports.handler = async function (event, context) {
 
     const submissions = await subsRes.json();
 
-    // Return only the fields we need (Name, Message, rating) — never expose emails
+    // Return only the fields we need (Name, Comment) — never expose emails
     const reviews = submissions.map((sub) => ({
       name: sub.data.Name || "Anonymous",
       message: sub.data.Message || "",
-      rating: sub.data.rating ? parseInt(sub.data.rating, 10) : null,
       date: sub.created_at,
     }));
 
@@ -69,7 +68,7 @@ exports.handler = async function (event, context) {
     return {
       statusCode: 500,
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ error: "Failed to fetch reviews." }),
+      body: JSON.stringify({ error: "Failed to fetch comments." }),
     };
   }
 };
