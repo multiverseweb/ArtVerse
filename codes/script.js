@@ -176,22 +176,16 @@ function loadReviews() {
 
       tbody.innerHTML = reviews
         .map((review) => {
-          // Generate star display
-          const stars = review.rating
-            ? "★".repeat(review.rating) + "☆".repeat(5 - review.rating)
-            : "—";
-          const starColor = review.rating ? "color: gold;" : "opacity: 0.4;";
 
           return `<tr>
             <td>${escapeHtml(review.name)}</td>
             <td>${escapeHtml(review.message)}</td>
-            <td style="${starColor}">${stars}</td>
           </tr>`;
         })
         .join("");
     })
     .catch((err) => {
-      console.error("Failed to load reviews:", err);
+      console.error("Failed to load comments:", err);
       tbody.innerHTML = `<tr><td colspan="3" style="text-align:center; opacity:0.5;">Could not load reviews.</td></tr>`;
     });
 }
